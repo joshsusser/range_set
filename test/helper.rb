@@ -1,3 +1,3 @@
 require 'rubygems'
 require 'test/unit'
-require 'range_set'
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib', 'range_set'))
