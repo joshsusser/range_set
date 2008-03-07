@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/../test_helper'
+require 'helper'
 require 'range_set'
 
 class RangeTest < Test::Unit::TestCase
@@ -84,4 +84,31 @@ class RangeTest < Test::Unit::TestCase
     assert_equal( (1..5) | RangeSet.new(10..15, 20..25), RangeSet.new(1..5, 10..15, 20..25) )
   end
   
+  def test_lt
+    assert (2..3) < 4
+    assert !((2..3) < 3)
+  end
+  
+  def test_gt
+    assert (2..3) > 1
+    assert !((2..3) > 2)
+  end
+  
+  def test_lte
+    assert (2..3) <= 4
+    assert (2..3) <= 3
+    assert !((2..3) <= 1)
+  end
+  
+  def test_lte
+    assert (2..3) <= 1
+    assert (2..3) <= 2
+    assert !((2..3) <= 4)
+  end
+  
+  def test_lte
+    assert (2..3) >= 1
+    assert (2..3) >= 2
+    assert !((2..3) >= 4)
+  end
 end

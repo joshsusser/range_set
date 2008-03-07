@@ -61,6 +61,21 @@ class Range
     end
   end
   
+  def <(value)
+    value > self.max
+  end
+  
+  def >(value)
+    value < self.min
+  end
+  
+  def <=(value)
+    self < value or self.include?(value)
+  end
+  
+  def >=(value)
+    self > value or self.include?(value)
+  end
 end # class Range
 
 
