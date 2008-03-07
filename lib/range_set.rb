@@ -1,5 +1,15 @@
 class Range
   
+  def self.assemble(array)
+    return nil if array.empty?
+    low_point = high_point = array.pop
+    array.each do |element|
+      low_point = element if element < low_point
+      high_point = element if element > high_point
+    end
+    low_point..high_point
+  end
+  
   def to_set
     RangeSet.new(self)
   end

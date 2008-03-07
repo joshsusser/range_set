@@ -111,4 +111,16 @@ class RangeTest < Test::Unit::TestCase
     assert (2..3) >= 2
     assert !((2..3) >= 4)
   end
+  
+  def test_assemble
+    assert_equal (2..5), Range.assemble([5,3,2])
+  end
+  
+  def test_assemble_single_value
+    assert_equal (1..1), Range.assemble([1])
+  end
+  
+  def test_assemble_returns_nil_for_empty_array
+    assert_nil Range.assemble([])
+  end
 end
