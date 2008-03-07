@@ -1,5 +1,4 @@
 require 'helper'
-require 'range_set'
 
 class RangeTest < Test::Unit::TestCase
 
