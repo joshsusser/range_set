@@ -58,4 +58,11 @@ class RangeSetTest < Test::Unit::TestCase
                   RangeSet.new(10..15, 20..25, 30..35, 40..45) )
   end
   
+  def test_mins
+    assert_equal [1,5,9], RangeSet.new(1..3, 5..8, 9..11).mins
+  end
+  
+  def test_maxes
+    assert_equal [3,8,11], RangeSet.new(1..3, 5..8, 9..11).maxs
+  end
 end

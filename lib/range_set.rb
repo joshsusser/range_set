@@ -208,6 +208,15 @@ class RangeSet < Object
     self.class.new(@ranges + rset.ranges)
   end
   
+  def mins
+    @ranges.map {|range| range.min}
+  end
+  
+  def maxs
+    @ranges.map {|range| range.max}
+  end
+  alias :maxes :maxs
+  
 protected
   
   # clean up range array - sort, merge overlaps
